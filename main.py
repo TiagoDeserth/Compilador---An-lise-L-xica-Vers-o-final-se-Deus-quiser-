@@ -156,9 +156,7 @@ def t_error(t):
 root = tk.Tk()
 
 class Application():
-    def __init__(self, master = None):
-        self.master = master
-        self.tk = tk.Tk()
+    def __init__(self):
         self.root = root
         self.tela()
         self.frames_da_tela()
