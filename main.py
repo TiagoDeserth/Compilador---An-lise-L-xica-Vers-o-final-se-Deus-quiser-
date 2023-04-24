@@ -4,8 +4,6 @@ from cProfile import label
 import tkinter as tk #Biblioteca para interfaces gráficas
 from tkinter import *
 from tkinter import ttk
-import tkinter as tk
-from PIL import ImageTk, Image
 from tkinter import filedialog
 from tkinter import filedialog as fd
 
@@ -300,12 +298,12 @@ class Application():
         def onOpen():
             tf = fd.askopenfilename(
                 initialdir = "C:/Users/MainFrame/Desktop",
-                title = "Open Text File",
-                filetypes = (("Text Files", "*.txt"),)
+                title = "Abrir arquivo de texto",
+                filetypes = (("Arquivos de texto", "*.txt"),)
             )
             tf = open(tf, 'r')
             entrada = tf.read()
-            self.condigo_entry.insert(END, entrada)
+            self.codigo_entry.insert(END, entrada)
             tf.close()
         
         def onSave():
@@ -352,8 +350,7 @@ class Application():
             newWindow.insert("", 14, text = "", values = ("classe", "classe", "classe", "Palavra reservada 'classe'"))
             newWindow.insert("", 15, text = "", values = ("leia", "leia", "leia", "Palavra reservada 'leia'"))
             newWindow.insert("", 16, text = "", values = ("escreva", "escreva", "escreva", "Palavra reservada 'escreva'"))
-            newWindow.insert("", 17, text = "", values = ("verdadeiro", "verdadeiro", "verdadeiro", "Palavra reservada 'verdadeiro'"))
-            newWindow.insert("", 18, text = "", values = ("falso", "falso", "falso", "Palavra reservada 'falso'"))
+            newWindow.insert("", 17, text = "", values = ("booleano", "verdadeiro, falso", "verdadeiro | falso", "Palavra reservada 'booleano'"))
 
             newWindow.insert("", 19, text = "", values = ("OP_ARIT", "+, -, /, *", "+, -, /, *", "+, -, /, *", "+, -, /, *", "Operadores aritméticos"))
             newWindow.insert("", 20, text = "", values = ("OP_REL", "<, >, <>, <=, >=, ==", "<, >, <>, <=, >=, ==", "Operadores relacionais"))
@@ -364,20 +361,21 @@ class Application():
             newWindow.insert("", 25, text = "", values = ("FECHA_CLT", "]", "]", "Operaode de 'fecha colchetes'"))
             newWindow.insert("", 26, text = "", values = ("ABRE_P", "(", "(", "Operador de 'abre parênteses'"))
             newWindow.insert("", 27, text = "", values = ("FECHA_P", ")", ")", "Operador de 'fecha parênteses'"))
-            newWindow.insert("", 28, text = "", values = ("COMENT", "**", "**", "Operador de 'comentário em linha'"))
-            newWindow.insert("", 29, text = "", values = ("COMENTS", "***...***", "***...***", "Operador de 'comentário em bloco'"))
+            newWindow.insert("", 28, text = "", values = ("COMENT", "¨", "¨", "Operador de 'comentário em linha'"))
             newWindow.insert("", 30, text = "", values = ("VIRGULA", ",", ",", "Operador de execução 'vírgula'"))
             newWindow.insert("", 31, text = "", values = ("PONTO_E_VIRGULA", ";", ";", "Operador de execução 'ponto e vírgula'"))
             newWindow.insert("", 32, text = "", values = ("DELIMITADOR", "$", "$", "Operador de 'delimitador (fim delinha)'"))
             newWindow.insert("", 33, text = "", values = ("tipo_var", "char, inteiro, decimal", "char, inteiro, decimal", "Variável"))
-            newWindow.insert("", 34, text = "", values = ("tipo_numint", "0, 1, 2, 3", "4, 5, 6", "Digito numérico 'INTEIRO'"))
-            newWindow.insert("", 35, text = "", values = ("tipo_texto", "Ciência da Computação", "Ciência da Computação", "Texto"))
-            newWindow.insert("", 36, text = "", values = ("tipo_letra", "C, I, E, c, i, e", "C, O, M, c, o, m", "Caracter único"))
-            newWindow.insert("", 37, text = "", values = ("tipo_numdec", "0.1, 0.01, 0.001", "3.14, 3.141", "Digito numérico 'DECIMAL'"))
+            newWindow.insert("", 34, text = "", values = ("valor_numint", "0, 1, 2, 3", "4, 5, 6", "Digito numérico 'INTEIRO'"))
+            newWindow.insert("", 35, text = "", values = ("valor_texto", "Ciência da Computação", "Ciência da Computação", "Texto"))
+            newWindow.insert("", 36, text = "", values = ("valor_letra", "C, I, E, c, i, e", "C, O, M, c, o, m", "Caracter único"))
+            newWindow.insert("", 37, text = "", values = ("valor_numdec", "0.1, 0.01, 0.001", "3.14, 3.141", "Digito numérico 'DECIMAL'"))
 
             newWindow.insert("", 38, text = "", values = ("ASPAS", ",", ",", "Operador de execução 'aspas'"))
+            newWindow.insert("", 38, text = "", values = ("OP_MOD", "%", "%", "Operador aritmético 'módulo'"))
 
             label.pack(pady = 10)
+            mainloop()
         
         menubar.add_cascade(label = "Arquivo", menu = filemenu)
         menubar.add_cascade(label = "Tabela de Tokens", menu = filemenu2)
