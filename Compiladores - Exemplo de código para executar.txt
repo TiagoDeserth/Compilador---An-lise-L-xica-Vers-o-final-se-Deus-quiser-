@@ -8,7 +8,7 @@ numint temperatura;
 texto mensagem;
 
 
-@CRIA CLASSE ControladorAmbiente
+¨CRIA CLASSE ControladorAmbiente
 classe controladorambiente:
     define temperatura()[
         temperatura := 25;
@@ -43,15 +43,3 @@ enquanto verdadeiro[
 }
 
 FIM{}
-
-
-
-
-
-
-
-
-
-
-
-
